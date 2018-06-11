@@ -1,0 +1,39 @@
+{
+  "name": "d3-force-straighten-paths",
+  "version": "1.0.0",
+  "description": "A force to straighten curved paths through a network",
+  "keywords": [
+    "d3",
+    "d3-module",
+    "network",
+    "forceSimulation",
+    "constraint",
+    "collide"
+  ],
+  "license": "MIT",
+  "main": "build/d3-force-straighten-paths.js",
+  "author": "Zhe Wang <zwang.contact@gmail.com>",
+  "contributors": [
+    "Gordon Woodhull <gordon@research.att.com>"
+  ],
+  "jsnext:main": "index",
+  "homepage": "https://github.com/att/d3-force-straighten-paths",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/att/d3-force-straighten-paths.git"
+  },
+  "scripts": {
+    "pretest": "rm -rf build && mkdir build && rollup -f umd -n d3 -g d3-quadtree:d3 -o build/d3-force-straighten-paths.js -- index.js",
+    "test": "tape 'test/**/*-test.js'",
+    "prepublish": "npm run test && uglifyjs build/d3-force-straighten-paths.js -c -m -o build/d3-force-straighten-paths.min.js",
+    "postpublish": "zip -j build/d3-force-straighten-paths.zip -- LICENSE README.md build/d3-force-straighten-paths.js build/d3-force-straighten-paths.min.js"
+  },
+  "devDependencies": {
+    "rollup": "0.27",
+    "tape": "4",
+    "uglify-js": "2.6.0"
+  },
+  "dependencies": {
+    "d3-collection": "1.x"
+  }
+}
