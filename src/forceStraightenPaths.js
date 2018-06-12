@@ -135,7 +135,8 @@ export default function(paths) {
                 _offsetNode(current, centerDisp);
             }
         });
-        console.log(report);
+        if(_debug)
+            console.log(report);
     };
     function find(nodeById, nodeId) {
         var node = nodeById.get(nodeId);
