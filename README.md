@@ -1,5 +1,7 @@
 # d3-force-straighten-paths
 
+![teaser image](./teaser.png)
+
 Given a set of paths as arrays of node ids or references, and the strength associated
 with each path, apply torsion spring forces to each node to attempt to straighten the
 paths.
